@@ -1,0 +1,12 @@
+<tr>
+    <th scope="row"><%= lead.name %></th>
+    <td><%= lead.phone %></td>
+    <td><%= lead.email %></td>
+    <td><%= lead.note %></td>
+    <td>
+        <%= link_to "Ver", lead_path(lead), :class => 'btn btn-sm btn-outline-success' %>
+        <%= link_to "Editar", edit_lead_path(lead), :class => 'btn btn-sm btn-outline-primary' %>
+        <%= link_to "Eliminar", lead_path(lead), :class => 'btn btn-sm btn-outline-danger', data: { turbo_method: :delete, turbo_confirm: 'Estás seguro?' } %>
+    </td>
+
+</tr>

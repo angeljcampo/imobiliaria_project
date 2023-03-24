@@ -5,6 +5,9 @@
                 <%= render partial: "partials/property", locals: {property: property} %>
             </div>
         <% end %>
-    </div>  
+    </div>
+    <div class="mx-auto">
+        <%= paginate @properties, theme: 'bootstrap3' %>
+    </div>
 
 </div>

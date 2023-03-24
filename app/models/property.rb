@@ -5,6 +5,8 @@ class Property < ApplicationRecord
     belongs_to :user
     has_one_attached :main_image
     has_many_attached :prop_images
+    has_many :leads
+
     #validaciones
     validates :commune_id, presence: true
 

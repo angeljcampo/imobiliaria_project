@@ -11,7 +11,8 @@
         <small class="card-text text-secondary"><%=property.address %></small><br>
         <small class="card-text text-secondary"><%=property.commune.name %></small><br>
 
-        <%= link_to "Editar", edit_property_path(property.id), class:"btn btn-success mt-3" unless current_user != property.user %>
+        <%= link_to "Editar", edit_property_path(property.id), class:"btn btn-success mt-3" %>
         <%= link_to "Ver propiedad", property_path(property.id), class:"btn btn-primary mt-3" %>
+        <%= link_to "Eliminar propiedad", property_path(property.id), class: 'nav-link btn btn-danger text-light mt-3', data: { turbo_method: :delete, turbo_confirm: 'Estás seguro?' } %>
     </div>
 </div>

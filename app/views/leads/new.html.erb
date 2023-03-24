@@ -1,0 +1,9 @@
+<div class="container p-4 bg-light">    
+    <%= form_for( @lead_form , url: leads_path, method: :post, remote: true) do |f| %>
+        <%= f.hidden_field :property_id, value: params[:id] %>
+        <%= render partial: "leads/partials/form", locals: {f:f} %>
+        <div class="form-group text-center">
+            <%= f.submit 'Crear lead', class: 'btn btn-lg btn-success'%>
+        </div>
+    <% end %>
+</div>

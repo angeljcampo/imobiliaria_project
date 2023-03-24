@@ -1,12 +1,12 @@
 class PropertiesController < ApplicationController
-  before_action :authenticate_user!, only: %i[edit update]
-  before_action :set_property, only: %i[show edit update delete]
+  before_action :authenticate_user!, only: %i[ show edit update destroy]
+  before_action :set_property, only: %i[show edit update destroy]
 
   def index
     if current_user.present?
-      @properties = current_user.properties
+      @properties = current_user.properties.order(created_at: :desc).page( params[:page])
     else
-      @properties = Property.all
+      @properties = Property.all.order(created_at: :desc).page( params[:page])
     end
   end
 
@@ -40,7 +40,12 @@ class PropertiesController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
+    if @property_form.destroy
+      redirect_to root_path, notice: 'La propiedad ha sido eliminada'
+    else
+      redirect_to root_path, notice: 'Hubo un problema al eliminar la propiedad'
+    end
   end
 
   private
