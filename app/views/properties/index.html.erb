@@ -1,1 +1,10 @@
+<div class="container-fluid">
+    <div class="row">
+        <% @properties.each do |property| %>
+            <div class="col-md-3 mb-4">
+                <%= render partial: "partials/property", locals: {property: property} %>
+            </div>
+        <% end %>
+    </div>  
 
+</div>

@@ -1,3 +1,3 @@
 class Commune < ApplicationRecord
-    belongs_to :property
+    has_many :properties
 end

@@ -1,0 +1,8 @@
+<div class="container p-4 bg-light">    
+    <%= form_for( @property_form , url: properties_path, method: :post, remote: true) do |f| %>
+        <%= render partial: "partials/form", locals: {f:f} %>
+        <div class="form-group text-center">
+            <%= f.submit 'Crear propiedad', class: 'btn btn-lg btn-success'%>
+        </div>
+    <% end %>
+</div>

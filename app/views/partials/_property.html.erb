@@ -1,0 +1,17 @@
+<div class="card">
+    <div class="card-img-top">
+        <%= image_tag(property.main_image, width: '100%', height: '400px') if property.main_image.present? %>
+    </div>
+    
+   
+    <div class="card-body">
+        <small>Desde</small>
+        <h5 class="card-title"><%=property.price_type %> <%= number_to_currency(property.price, delimiter: '.', separator: ',', precision: 0) %></h5>
+        <small class="card-text">Propiedad en <%=property.business_type %></small><br>
+        <small class="card-text text-secondary"><%=property.address %></small><br>
+        <small class="card-text text-secondary"><%=property.commune.name %></small><br>
+
+        <%= link_to "Editar", edit_property_path(property.id), class:"btn btn-success mt-3" unless current_user != property.user %>
+        <%= link_to "Ver propiedad", property_path(property.id), class:"btn btn-primary mt-3" %>
+    </div>
+</div>
