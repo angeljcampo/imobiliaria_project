@@ -1,2 +1,53 @@
-<h1>Properties#show</h1>
-<p>Find me in app/views/properties/show.html.erb</p>
+<div class="container p-4 bg-light">    
+    
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Tipo de propiedad</label>
+            <p class="form-control"><%= @property_form.property_type %></p>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Tipo de negocio</label>
+            <p class="form-control"><%= @property_form.business_type %></p>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-1">
+            <label >Unidad</label>
+            <p class="form-control"><%= @property_form.price_type %></p>
+        </div>
+        <div class="form-group col-md-5">
+            <label >Precio</label>
+            <p class="form-control"><%= @property_form.price %></p>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Comuna</label>
+            <p class="form-control"><%= @property_form.commune.name %></p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label >Dirección</label>
+        <p class="form-control"><%= @property_form.address %></p>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-2">
+            <label>Area</label>
+            <p class="form-control"><%= @property_form.area %></p>
+        </div>
+        <div class="form-group col-md-2">
+            <label>Habitaciones</label>
+            <p class="form-control"><%= @property_form.room_quantity %></p>
+        </div>
+        <div class="form-group col-md-2">
+            <label>Baños</label>
+            <p class="form-control"><%= @property_form.bath_quantity %></p>
+        </div>
+    </div>
+    <div class="container mt-3">
+        <h3 class="text-center mb-3"> Imágenes de la propiedad</h3>
+        <% @property_form.prop_images.each do |img| %>
+            <%= image_tag(img, width: '100%', height: '400px') %>
+        <% end %>
+    </div>
+
+
+</div>

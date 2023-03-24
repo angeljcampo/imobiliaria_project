@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Dataprop</a>
+  <%= link_to "Dataprop", root_path, class: 'text-dark h3' %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -7,14 +7,18 @@
     <ul class="navbar-nav ml-auto mr-5">
       <% if current_user.present? %>
         <li class="nav-item">
-          <%= link_to 'Cerrar sesión', destroy_user_session_path, class: 'nav-link btn btn-outline-dark text-info' %>
+          <%= link_to 'Crear propiedad', new_property_path, class: 'nav-link btn btn-outline-success text-dark mr-3' %>
+        </li>
+        <li class="nav-item">
+        
+          <%= link_to 'Cerrar sesión', destroy_user_session_path, class: 'nav-link btn btn-outline-primary text-dark', data: { turbo_method: :delete, turbo_confirm: 'Estás seguro?' } %>
         </li>
       <% else %>
         <li class="nav-item active">
           <%= link_to 'Crear cuenta', new_user_registration_path, class: 'nav-link mr-3' %>
         </li>
         <li class="nav-item">
-          <%= link_to 'Ingresar', new_user_session_path, class: 'nav-link btn btn-outline-dark text-info' %>
+          <%= link_to 'Ingresar', new_user_session_path, class: 'nav-link btn btn-outline-dark text-primary' %>
         </li>
       <% end %>
     </ul>
