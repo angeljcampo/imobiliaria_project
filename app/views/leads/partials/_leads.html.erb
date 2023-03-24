@@ -1,0 +1,5 @@
+<tbody>
+    <% @leads.each do |lead|%>
+        <%= render partial: "leads/partials/lead", locals: {lead: lead} %>
+    <% end %>
+</tbody>

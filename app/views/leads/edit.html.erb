@@ -1,0 +1,10 @@
+<div class="container p-4 bg-light">    
+    <%= form_for( @lead_form , url: lead_path, method: :put, remote: false) do |f| %>
+        <%= f.hidden_field :property_id, value: @lead_form.property_id %>
+        <%= render partial: "leads/partials/form", locals: {f:f} %>
+        <div class="form-group text-center">
+             <%= link_to "Volver", leads_path(@lead_form.property_id), class: 'btn btn-lg btn-primary mt-3' %>
+            <%= f.submit 'Actualizar lead', class: 'btn btn-lg btn-success mt-3'%>
+        </div>
+    <% end %>
+</div>

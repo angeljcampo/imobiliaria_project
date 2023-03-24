@@ -1,5 +1,6 @@
 <div class="container p-4 bg-light">    
-    
+    <%= link_to "Editar", edit_property_path(@property_form), class:"btn btn-success my-3" %>
+    <%= link_to "Ver leads de la propiedad", leads_path(@property_form), class:"btn btn-success my-3" %>
     <div class="form-row">
         <div class="form-group col-md-6">
             <label>Tipo de propiedad</label>

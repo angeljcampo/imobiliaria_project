@@ -1,0 +1,19 @@
+<div class="container-fluid">
+  <%= link_to "Crear lead", new_lead_path, :class => 'btn btn-success mb-4' %>
+  <% if @leads.empty?%>
+    <h1 class="text-center text-primary">No existen leads para esta propiedad</h1>
+  <% else%>
+    <table class="table table-striped ">
+      <thead>
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Teléfono</th>
+          <th scope="col">Correo electrónico</th>
+          <th scope="col" row= 2>Observaciones</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <%= render partial: "leads/partials/leads" %>
+    </table>
+  <%end %>
+</div>
